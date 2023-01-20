@@ -84,7 +84,7 @@ export class AuthService {
         userId,
         email,
       },
-      { expiresIn: "10s", secret: config.ACCESS_TOKEN_SECRET }
+      { expiresIn: "1h", secret: config.ACCESS_TOKEN_SECRET }
     );
 
     const refreshToken = this.jwtService.sign(
@@ -93,7 +93,7 @@ export class AuthService {
         email,
         accessToken,
       },
-      { expiresIn: "10s", secret: config.REFRESH_TOKEN_SECRET }
+      { expiresIn: "4h", secret: config.REFRESH_TOKEN_SECRET }
     );
 
     return { accessToken, refreshToken };

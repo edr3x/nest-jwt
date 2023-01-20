@@ -20,6 +20,7 @@ type Mutation {
 
 type Query {
   auth(id: Int!): Auth!
+  hello: String!
 }
 
 input SignInInput {
