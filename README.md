@@ -19,3 +19,7 @@ $ yarn start:prod
 ### Signin
 
 ![sign in](https://user-images.githubusercontent.com/45848083/212311094-a6986320-6fef-49fd-bf5e-b8c0e4668150.png)
+
+### Logout
+
+![logout](https://user-images.githubusercontent.com/45848083/213633069-ea7971c7-7811-492a-b668-3d44e0180e73.png)
