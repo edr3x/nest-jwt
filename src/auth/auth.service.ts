@@ -1,4 +1,8 @@
-import { ForbiddenException, Injectable } from "@nestjs/common";
+import {
+  BadRequestException,
+  ForbiddenException,
+  Injectable,
+} from "@nestjs/common";
 import { PrismaService } from "src/prisma/prisma.service";
 import { SignUpInput } from "./dto/signup-input";
 import { UpdateAuthInput } from "./dto/update-auth.input";
@@ -13,6 +17,11 @@ export class AuthService {
 
   async signup(signUpInput: SignUpInput) {
     const { username, password, email } = signUpInput;
+
+    const doesExist = await this.prisma.user.findUnique({ where: { email } });
+
+    if (doesExist) throw new BadRequestException("User already Exists");
+
     const hashedPassword = await argon.hash(password);
 
     const user = await this.prisma.user.create({
@@ -97,5 +106,19 @@ export class AuthService {
       where: { id: userId },
       data: { hashedRefreshToken },
     });
+  }
+
+  async logout(userId: number) {
+    await this.prisma.user.updateMany({
+      where: {
+        id: userId,
+        hashedRefreshToken: { not: null },
+      },
+      data: {
+        hashedRefreshToken: null,
+      },
+    });
+
+    return { loggedOut: true };
   }
 }
