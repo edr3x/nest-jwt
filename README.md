@@ -27,3 +27,7 @@ $ yarn start:prod
 ### Protected Routes
 
 ![hello route protect](https://user-images.githubusercontent.com/45848083/213643660-f222e144-17ee-4f05-87d6-ba8bb75093a6.png)
+
+### Update Refresh Token
+
+![2023-01-20_15:28:19](https://user-images.githubusercontent.com/45848083/213664870-fc0e1c66-adfe-4a53-8823-b51e6a3e6b1d.png)
