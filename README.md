@@ -23,3 +23,7 @@ $ yarn start:prod
 ### Logout
 
 ![logout](https://user-images.githubusercontent.com/45848083/213633069-ea7971c7-7811-492a-b668-3d44e0180e73.png)
+
+### Protected Routes
+
+![hello route protect](https://user-images.githubusercontent.com/45848083/213643660-f222e144-17ee-4f05-87d6-ba8bb75093a6.png)
